@@ -611,4 +611,4 @@ $string['upgradenotice_2022080922_notcopied'] = 'The <strong>{$a}</strong> setti
 $string['privacyfhgr'] = "Data Privacy";
 
 //Login -FHGR
-$string['aaiintrotext'] = "Select your Home Organisation to log in";
+$string['manuallogin'] = "Manual Login";

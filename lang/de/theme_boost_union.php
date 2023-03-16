@@ -2,4 +2,5 @@
 $string['privacyfhgr'] = "Datenschutzverordnung";
 
 //Login -FHGR
-$string['aaiintrotext'] = "Login über";
+$string['manuallogin'] = "Manuelles Login";
+
