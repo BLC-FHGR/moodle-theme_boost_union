@@ -1036,3 +1036,6 @@ $string['upgradenotice_2022080922_notcopied'] = 'The <strong>{$a}</strong> setti
 
 //Login -FHGR
 $string['manuallogin'] = "Manual Login";
+
+//Footer -FHGR
+$string['privacyfhgr'] = "Data Privacy";

@@ -26,3 +26,6 @@ defined('MOODLE_INTERNAL') || die();
 
 //Login -FHGR
 $string['manuallogin'] = "Manuelles Login";
+
+//Footer -FHGR
+$string['privacyfhgr'] = "Datenschutzverordnung";
