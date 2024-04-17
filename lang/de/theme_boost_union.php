@@ -28,4 +28,4 @@ defined('MOODLE_INTERNAL') || die();
 $string['manuallogin'] = "Manuelles Login";
 
 //Footer -FHGR
-$string['privacyfhgr'] = "Datenschutzverordnung";
+$string['privacyfhgr'] = "Datenschutzerklärung";
