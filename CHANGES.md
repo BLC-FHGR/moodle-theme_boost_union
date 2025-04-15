@@ -6,6 +6,7 @@ Changes
 
 ### Unreleased
 
+* 2025-04-10 - Upgrade: Replace the $nav-divider-color SCSS variable in post.scss which does not exist anymore and prevented the Boost Union SCSS from being compiled.
 * 2025-04-10 - Prepare compatibility for Moodle 5.0.
 * 2025-05-02 - Bugfix: On mobile devices, the course listing combo box produced horizontal scroll bars, resolves #926.
 * 2025-04-30 - Bugfix: Modified smart menu transition time had an impact on the slider, resolves #922.
