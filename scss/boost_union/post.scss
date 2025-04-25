@@ -561,7 +561,7 @@
                 }
             }
 
-            > .category:last-child {
+            > .category[data-depth="1"]:last-child {
                 @extend .py-2;
             }
         }
