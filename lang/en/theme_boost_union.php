@@ -421,6 +421,8 @@ $string['courseindexcompletioninfoposition_desc'] = 'Choose the position where t
 $string['courseindexcompletioninfopositionendofline'] = 'End of line';
 $string['courseindexcompletioninfopositioniconcolor'] = 'Icon color';
 $string['courseindexcompletioninfopositionstartofline'] = 'Start of line';
+$string["sectionsummaryactivitytypes"] = "Display activity types in section summaries";
+$string["sectionsummaryactivitytypes_desc"] = "When enabled, each section shows a list of activity types next to the activity count.";
 
 // Settings: E-Mail branding tab.
 $string['emailbrandingtab'] = 'E-Mail branding';

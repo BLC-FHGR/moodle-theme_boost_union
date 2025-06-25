@@ -1187,6 +1187,12 @@ if ($hassiteconfig || has_capability('theme/boost_union:configure', context_syst
         $tab->add($setting);
         $page->hide_if('theme_boost_union/courseindexcompletioninfoposition', 'theme_boost_union/courseindexmodiconenabled', 'neq',
                 THEME_BOOST_UNION_SETTING_SELECT_YES);
+        // Setting: Display activity types in section summaries.
+        $name = 'theme_boost_union/sectionsummaryactivitytypes';
+        $title = get_string('sectionsummaryactivitytypes', 'theme_boost_union', null, true);
+        $description = get_string('sectionsummaryactivitytypes_desc', 'theme_boost_union', null, true);
+        $setting = new admin_setting_configselect($name, $title, $description, THEME_BOOST_UNION_SETTING_SELECT_NO, $yesnooption);
+        $tab->add($setting);
 
         // Add tab to settings page.
         $page->add($tab);

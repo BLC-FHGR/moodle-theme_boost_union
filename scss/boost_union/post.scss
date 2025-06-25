@@ -799,6 +799,16 @@ body.hascourseindexcmicons {
 
 
 /*=======================================
+/*---------------------------------------
+ * Setting: Activity types in section summaries.
+ --------------------------------------*/
+body.hassectionactivitytypes {
+    .section-activity-types {
+        color: $gray-600;
+        font-size: 85%;
+    }
+}
+
  * Settings: Look -> Resources
  ======================================*/
 

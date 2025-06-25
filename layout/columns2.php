@@ -113,6 +113,7 @@ $templatecontext = [
 
 // Include the template content for the course related hints.
 require_once(__DIR__ . '/includes/courserelatedhints.php');
+require_once(__DIR__ . '/includes/sectionsummaryactivitytypes.php');
 
 // Include the content for the back to top button.
 require_once(__DIR__ . '/includes/backtotopbutton.php');

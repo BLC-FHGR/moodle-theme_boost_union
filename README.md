@@ -298,6 +298,10 @@ When enabled, the corresponding activity type icon is displayed in front of the 
 ###### Position of activity completion indication.
 
 Choose the position where the completion indication is displayed.
+###### Activity types in section summaries
+
+When enabled, each course section summary lists the distinct activity types it contains in addition to the activity count.
+
 
 #### Tab "E-Mail branding"
 
