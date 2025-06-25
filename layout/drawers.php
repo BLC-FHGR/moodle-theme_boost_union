@@ -188,6 +188,8 @@ require_once(__DIR__ . '/includes/footerbuttons.php');
 
 // Include the content for the scrollspy.
 require_once(__DIR__ . '/includes/scrollspy.php');
+// Include the content for making course section headers clickable.
+require_once(__DIR__ . '/includes/sectionheaderlink.php');
 
 // Include the template content for the footnote.
 require_once(__DIR__ . '/includes/footnote.php');

@@ -3283,3 +3283,8 @@ body.dir-rtl {
     }
 }
 
+/* Indicate clickable course section headers. */
+.course-section-header {
+    cursor: pointer !important;
+}
+
