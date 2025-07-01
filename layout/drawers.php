@@ -189,6 +189,9 @@ require_once(__DIR__ . '/includes/footerbuttons.php');
 // Include the content for the scrollspy.
 require_once(__DIR__ . '/includes/scrollspy.php');
 
+// Include the content for enhanced section summaries.
+require_once(__DIR__ . '/includes/sectionsummaryactivities.php');
+
 // Include the template content for the footnote.
 require_once(__DIR__ . '/includes/footnote.php');
 
