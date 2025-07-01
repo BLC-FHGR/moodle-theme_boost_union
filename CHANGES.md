@@ -4,6 +4,11 @@ moodle-theme_boost_union
 Changes
 -------
 
+
+### v5.0-r5
+
+* 2025-07-01 - Improvement: Show activity counts by type in collapsed section summaries.
+
 ### v5.0-r4
 
 * 2025-06-09 - Upstream change: Remove preemptive regression fix after MDL-85326 was integrated, resolves #928.
