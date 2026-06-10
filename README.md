@@ -731,8 +731,9 @@ As you have read in the introduction, the main design principle of Boost Union i
   Against this background, if you switch from Boost to Boost Union and had a favicon shown in Boost before, this favicon won't be shown until you upload it again in Boost Union directly.
 * Login page authentication instructions:
   Boost Union does not output the Moodle core setting `auth_instructions` (authentication method instructions) on the login page.
-  In Moodle core, this setting is shown in context of the user self-registration method.
-  However, in Boost Union with its enhanced login page layouts (tabs, accordion), the self-registration section might not be visible after page load, making the instructions hidden from view.
+  In Moodle core, this setting is shown in the left hand layout on the login page (on larger screens) and below the login form (on smaller screens).
+  Additionally, if the Moodle core setting `auth_instructions` is empty, Moodle core shows some advertisement text at this place instead.
+  However, in Boost Union with its login page arrangements (side-by-side, legacy) and its enhanced login page layouts (tabs, accordion), these implicit behavious would have been problematic.
   To improve the admin experience and provide a cleaner solution, Boost Union offers dedicated login instructions settings for each login method as well as generic instructions.
   Against this background, if you switch from Boost to Boost Union and had a text configured in the Moodle core `auth_instructions` setting, this text won't be shown until you copy it to Boost Union's own login instructions.
 * Login page texts:
@@ -828,6 +829,9 @@ Having said that, here's the order how all the SCSS code is added to the SCSS st
 3. `theme_boost_union` > `get_pre_scss()`:
    * Adds the Boost Union Pre SCSS from disk\
      (which is located on `/theme/boost_union/scss/boost_union/pre.scss` and which is empty currently)
+   * If we are on Moodle Workplace™:\
+     * Adds the Boost Union MWP Pre SCSS from disk\
+       (which is located on `/local/boost_union_mwp/scss/pre.scss`)
    * Sets several SCSS variables based on Boost Union or Boost Union flavour settings
    * Adds the Boost Union external Pre SCSS\
      (which is set on `/admin/settings.php?section=theme_boost_union_look#theme_boost_union_look_scss`)
@@ -835,13 +839,20 @@ Having said that, here's the order how all the SCSS code is added to the SCSS st
      (which is set within the active flavour on `/theme/boost_union/flavours/overview.php`)
 
 4. `theme_boost_union` > `get_main_scss()`:
-   * Calls the `theme_boost` > `get_main_scss()` function
-     * Adds the Boost Core Preset\
-       (which is set on `/admin/settings.php?section=themesettingboost` and defaults to the `/theme/boost/scss/preset/default.scss` file).
-       With this preset, the FontAwesome library, the Bootstrap library and all the Moodle core stylings are added which means that this preset is the place where all the Moodle core style is added.
+   * If we are on Moodle LMS:
+     * Calls the `theme_boost` > `get_main_scss()` function
+       * Adds the Boost Core Preset\
+         (which is set on `/admin/settings.php?section=themesettingboost` and defaults to the `/theme/boost/scss/preset/default.scss` file).
+         With this preset, the FontAwesome library, the Bootstrap library and all the Moodle core stylings are added which means that this preset is the place where all the Moodle core style is added.
+   * If we are on Moodle Workplace™:\
+     * Calls the `theme_workplace` > `get_main_scss()` function
+       From this parent theme, the FontAwesome library, the Bootstrap library and all the Moodle core and MWP stylings are added which means that this preset is the place where all the Moodle core style is added.
    * Adds the Boost Union Post SCSS from disk\
      (which is located on `/theme/boost_union/scss/boost_union/post.scss`)
      This file holds all the Boost Union specific SCSS code which can be added to the stack without being dependent on specific configurations like configured colors or sizes.
+   * If we are on Moodle Workplace™:\
+     * Adds the Boost Union MWP Post SCSS from disk\
+       (which is located on `/local/boost_union_mwp/scss/post.scss`)
    * Adds the Boost Union external SCSS\
      (which is set on `/admin/settings.php?section=theme_boost_union_look#theme_boost_union_look_scss`)
    * Adds the Boost Union SCSS snippets\
@@ -855,6 +866,9 @@ Having said that, here's the order how all the SCSS code is added to the SCSS st
 
 6. `theme_boost_union` > `get_extra_scss()`:
    * Overrides / enhances the background images which have been set before
+   * If we are on Moodle Workplace™:\
+     * Adds the MWP tenant branding Custom SCSS\
+       (which is set within the active tenant on `/admin/tool/tenant/index.php`)
    * Adds the Boost Union flavour Post SCSS\
      (which is set within the active flavour on `/theme/boost_union/flavours/overview.php`)
    * Adds the Boost Union features' SCSS.
@@ -924,6 +938,16 @@ Right-to-left support
 
 This plugin has not been tested with Moodle's support for right-to-left (RTL) languages.
 If you want to use this plugin with a RTL language and it doesn't work as-is, you are free to send us a pull request on Github with modifications.
+
+
+Moodle Workplace™ support
+-------------------------
+
+This theme is installable on [Moodle Workplace™](https://moodle.com/products/workplace), but will lack essential Moodle Workplace™ widgets and won't have any support for tenants.
+
+But don't worry, there is the Boost Union MWP edition which provides full Moodle Workplace™ support and which is maintained by Boost Union co-maintainer bdecent. If you want to use Boost Union on Moodle Workplace™, you can find all details on the [bdecent product presentation page](https://bdecent.de/union).
+
+Technical note: The Boost Union MWP edition comes as an additional plugin which is included in / called from all relevant places in this theme's code. Thus, if you like, you can generally evaluate this theme on Moodle Workplace™ directly and order the Boost Union MWP edition as soon as you are ready to.
 
 
 Maintainers

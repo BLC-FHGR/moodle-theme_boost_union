@@ -134,8 +134,7 @@ function xmldb_theme_boost_union_upgrade($oldversion) {
         // Show the notification.
         // (If this notification is shown during a CLI upgrade, the p and strong HTML tags are shown as well.
         // We accept this glitch as it's just a one-time glitch and the admin can still read the notification.
-        $notification = new \core\output\notification($message, \core\output\notification::NOTIFY_SUCCESS);
-        $notification->set_show_closebutton(false);
+        $notification = new \core\output\notification($message, \core\output\notification::NOTIFY_SUCCESS, false);
         echo $OUTPUT->render($notification);
 
         // Boost_union savepoint reached.
@@ -1106,6 +1105,47 @@ function xmldb_theme_boost_union_upgrade($oldversion) {
 
         // Boost Union savepoint reached.
         upgrade_plugin_savepoint(true, 2026042000, 'theme', 'boost_union');
+    }
+
+    if ($oldversion < 2026042003) {
+        // Define field displayfieldcustomfield to be added to theme_boost_union_menuitems.
+        $table = new xmldb_table('theme_boost_union_menuitems');
+        $field = new xmldb_field('displayfieldcustomfield', XMLDB_TYPE_INTEGER, '18', null, null, null, null, 'displayfield');
+        if (!$dbman->field_exists($table, $field)) {
+            $dbman->add_field($table, $field);
+        }
+
+        // Define field displayfieldsecond to be added to theme_boost_union_menuitems.
+        $table = new xmldb_table('theme_boost_union_menuitems');
+        $field = new xmldb_field('displayfieldsecond', XMLDB_TYPE_INTEGER, '9', null, null, null, null, 'displayfield');
+        if (!$dbman->field_exists($table, $field)) {
+            $dbman->add_field($table, $field);
+        }
+
+        // Define field displayfieldsecondcustomfield to be added to theme_boost_union_menuitems.
+        $field = new xmldb_field(
+            'displayfieldsecondcustomfield',
+            XMLDB_TYPE_INTEGER,
+            '18',
+            null,
+            null,
+            null,
+            null,
+            'displayfieldsecond'
+        );
+        if (!$dbman->field_exists($table, $field)) {
+            $dbman->add_field($table, $field);
+        }
+
+        // Define field textcountsecond to be added to theme_boost_union_menuitems.
+        $table = new xmldb_table('theme_boost_union_menuitems');
+        $field = new xmldb_field('textcountsecond', XMLDB_TYPE_INTEGER, '9', null, null, null, null, 'textcount');
+        if (!$dbman->field_exists($table, $field)) {
+            $dbman->add_field($table, $field);
+        }
+
+        // Boost Union savepoint reached.
+        upgrade_plugin_savepoint(true, 2026042003, 'theme', 'boost_union');
     }
 
     // Load the builtin SCSS snippets into the database.

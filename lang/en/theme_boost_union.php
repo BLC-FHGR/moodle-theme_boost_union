@@ -97,12 +97,16 @@ $string['tertiarysettings'] = 'List of Boost Union settings pages';
 $string['settingoverridenotificationtitle'] = 'Possible setting overrides';
 $string['settingoverrideactioninfo'] = 'Explain setting possible overrides';
 $string['settingoverrideactionflavours'] = 'Manage flavours';
+$string['settingoverrideactionmwp'] = 'Manage tenant brandings';
 $string['settingoverridemodallms'] = '<strong>Flavours</strong><br />Boost Union\'s flavours offer a possibility to override particular Moodle look & feel settings in particular contexts. Here, the global default setting is defined. And with flavours, you can differentiate the setting for particular contexts or user groups. Click on the \'Manage flavours\' icon to go to the flavours management page and define a flavour.';
+$string['settingoverridemodalmwp'] = '<strong>Tenant brandings</strong><br />Boost Union\'s tenant brandings offer a possibility to override particular Moodle look & feel settings for particular tenants. Here, the global default setting is defined. And with tenant brandings, you can differentiate the setting for particular tenants. Click on the \'Manage tenant brandings\' icon to go to the tenant management page and define a tenant branding.';
+$string['settingoverridemodallmsmwp'] = '<strong>Order</strong><br />If you have defined both flavours and tenant overrides for a particular Boost Union setting, the flavour override will take precedence over the tenant branding override.';
 $string['settingoverridelms'] = 'This setting can be overridden within Boost Union flavours.';
+$string['settingoverridelmsmwp'] = 'This setting can be overridden within the tenant brandings and Boost Union flavours.';
+$string['settingoverridemwp'] = 'This setting can be overridden within the tenant brandings.';
 $string['settingsupplementlms'] = 'This setting can be supplemented within Boost Union flavours.';
-
-// Settings: General warnings.
-$string['warningslashargumentsdisabled'] = 'Warning: The <a href="{$a->url}">slasharguments setting</a> is disabled in your Moodle configuration currently. However, this setting is required for the correct operation of the following Boost Union setting. Please enable slasharguments, otherwise the following Boost Union setting will not have any effect.';
+$string['settingsupplementlmsmwp'] = 'This setting can be supplemented within the tenant brandings and Boost Union flavours.';
+$string['settingsupplementmwp'] = 'This setting can be supplemented within the tenant brandings.';
 
 // Settings: Overview page.
 $string['settingsoverview'] = 'Settings overview';
@@ -313,7 +317,6 @@ $string['modiconsfiles'] = 'Custom icons files';
 $string['modiconsfiles_desc'] = 'Here, you can upload custom icons for all or only some activity modules installed in this Moodle instance.';
 $string['modiconsfileshowto'] = 'To upload a particular custom activity icon, start by creating a folder with the internal name of the activity, e.g. <em>assign</em> for the assigment activity. In this folder, you upload the icon as SVG file called monologo.svg and, if possible, as fallback PNG file called monologo.png. If you want to customize the colored icons which have been in use up to Moodle 3 and which may still be used by older plugins, you can also upload them as icon.svg and icon.png files. However, please stick to monochromatic SVG icons if possible for best results. Then, please save the settings page. As soon as you have save the setting with at least one file, a file list will appear below which helps you to check if the custom icons have been uploaded correctly.';
 $string['modiconsfilestech'] = 'Technical note: After saving the setting, the uploaded folder structure and icon files will be copied to the pix_plugins/mod folder in your Moodledata directory. This is where Moodle core searches for custom activity icons. All icon files which may already exist in this place will be overwritten when you save this setting.';
-$string['modiconserrorcreatingpath'] = 'The pix_plugins/mod folder could not be created in your Moodledata directory.<br />The exception message was:{$a}.';
 // ... ... Information: Custom icons files list.
 $string['modiconlistsetting'] = 'Custom icons files list';
 $string['modiconlistsetting_desc'] = 'This is the list of custom icon files which you have uploaded to the custom icon files filearea above. All valid icon files are listed here. In addition to that, other files you may have uploaded as well but which are not valid icon files are also shown as broken files.';
@@ -366,6 +369,8 @@ $string['loginformpositionsetting_desc'] = 'With this setting, you can optimize 
 $string['loginformpositionsetting_center'] = 'Centered';
 $string['loginformpositionsetting_left'] = 'Left-aligned';
 $string['loginformpositionsetting_right'] = 'Right-aligned';
+$string['loginformpositionsetting_semileft'] = 'Semi-left-aligned';
+$string['loginformpositionsetting_semiright'] = 'Semi-right-aligned';
 // ... ... Setting: Login container transparency.
 // These strings do not fully match the setting name as the setting was renamend during its lifetime, but the string IDs were keps to ease the life of the translators.
 $string['loginformtransparencysetting'] = 'Login container transparency';
@@ -379,6 +384,7 @@ $string['loginbackgroundimagesheading'] = 'Login page background images';
 // ... ... Setting: Login page background image.
 $string['loginbackgroundimage'] = 'Login page background images';
 $string['loginbackgroundimage_desc'] = 'The images to display as a background of the login page. One of these images will be picked randomly and shown when the user visits the login page. Please make sure not to use non-ASCII-characters in the filename if you want to display text for login background images.';
+$string['loginbackgroundimage_note'] = 'If no image is uploaded here, the default image from Moodle core will be used.';
 // ... ... Setting: Login page background image position.
 $string['loginbackgroundimagepositionsetting'] = 'Login page background image position';
 $string['loginbackgroundimagepositionsetting_desc'] = 'With this setting, you control the positioning of the login page background image within the browser window. The first value is the horizontal position, the second value is the vertical position.';
@@ -437,11 +443,14 @@ $string['loginenhancedtabslayoutsetting'] = 'Enhanced tabs layout behaviour';
 $string['loginenhancedtabslayoutsetting_desc'] = 'The tabs layout generally respects the configured login container width, as described in the login container width setting. And the login container of the tabs layout is displayed vertically centered just like the other login form layouts. However, there might be configurations when this is not enough. Maybe the height of the particular tab panes differ too much so that the tabs jump vertically when the active tab is changed. Or maybe really long tab labels widen the login container width, but multiline login instruction texts do not adapt accordingly. These are edge cases which cannot be solved cleanly with CSS and for such cases, you can add a JavaScript module which, after the login page has loaded, tries to ensure that all the login content is still presented and positioned as appropriately as possible.';
 // ... Section: Login instructions.
 $string['logininstructionsheading'] = 'Login instructions';
-$string['logininstructionsheading_desc'] = 'Please note: Boost Union has its own login instructions settings and does not output the content from <a href="{$a}">Moodle core\'s authentication instruction setting</a>.';
 $string['logininstructionsabove'] = 'Instructions above login provider list';
 $string['logininstructionsabove_desc'] = 'With this setting, you can add instructions that will be shown above the list of login providers on the login page. This is a good place to add general information that applies to all login methods.';
 $string['logininstructionsbelow'] = 'Instructions below login provider list';
 $string['logininstructionsbelow_desc'] = 'With this setting, you can add instructions that will be shown below the list of login providers on the login page. This is a good place to add additional information or support contacts that apply to all login methods.';
+$string['logininstructionssideupper'] = 'Instructions in side panel (upper part)';
+$string['logininstructionssideupper_desc'] = 'With this setting, you can add instructions that will be shown in the left side panel of the login page. On small screens, where the side panel is hidden, the instructions are shown above the login form instead. There, they will be presented below and in a in a smaller font than the \'Instructions above login provider list\' content.';
+$string['logininstructionssidelower'] = 'Instructions in side panel (lower part)';
+$string['logininstructionssidelower_desc'] = 'With this setting, you can add instructions that will be shown in the left side panel of the login page. On small screens, where the side panel is hidden, the instructions are shown below the login form instead. There, they will be presented below and in a in a smaller font than the \'Instructions below login provider list\' content.';
 // ... Section: Login order.
 $string['loginorderheading'] = 'Login order';
 $string['loginorderheading_desc'] = 'With these settings, you control the order of the login providers in the login form. The presented order will be defined from lowest to highest ordinal number, skipping all login providers and login form elements which are disabled in Boost Union.';
@@ -891,8 +900,6 @@ $string['customfontssetting_desc'] = 'With this setting you can upload custom fo
 // ... ... Information: Custom fonts list.
 $string['customfontslistsetting'] = 'Custom fonts list';
 $string['customfontslistsetting_desc'] = 'This is the list of fonts which you have uploaded to the custom fonts filearea. The given CSS snippets can be used to add these fonts to your custom SCSS. Please note that you will have to take care of the font format value as well as the font-family, font-style and font-weight CSS properties yourself for now as Boost Union is not able yet to parse the font files.';
-$string['customfontsfileurlpersistent'] = 'URL (persistent)';
-$string['customfontsfileurlrevisioned'] = 'URL (revisioned)';
 
 // Settings: H5P tab.
 $string['h5ptab'] = 'H5P';
@@ -1007,7 +1014,6 @@ $string['blockregionsheading_guestrole_fixed'] = 'The guest role uses the new de
 $string['blockregionsheading_guestrole_keep'] = 'Keep the guest role as it is';
 $string['blockregionsheading_guestrole_kept'] = 'The guest role will be kept as it is and the notification on the settings page will be removed now.';
 $string['error:infobannerdismissnonotvalidnotset'] = 'This Boost Union instance was either not upgraded from a release earlier than Boost Union v5.0 or the new guest role defaults were already handled. There is nothing to do here.';
-$string['region-none'] = 'None';
 $string['region-outside-left'] = 'Outside (left)';
 $string['region-outside-top'] = 'Outside (top)';
 $string['region-outside-bottom'] = 'Outside (bottom)';
@@ -1821,7 +1827,6 @@ $string['enableuploadedsnippets_desc'] = 'With this setting, you can enable or d
 // ... ... Setting: Upload snippets.
 $string['uploadedsnippets'] = 'Upload snippets';
 $string['uploadedsnippets_desc'] = 'You can either upload individual SCSS snippet files or a ZIP archive containing multiple SCSS snippet files – the ZIP file will be automatically extracted and the contained SCSS snippets will then be avaiable in this file area as individual files.';
-$string['uploadedsnippets_note'] = 'You can find the structure and syntax of Boost Union SCSS snippets in our <a href="{$a->url}" target="_blank">SCSS snippets repository</a>. There, you also find instructions how to use existing community snippets and contribute snippets to the community.';
 
 // Settings: Smart menus page.
 $string['smartmenus'] = 'Smart menus';
@@ -1831,7 +1836,6 @@ $string['smartmenus_desc'] = '<p>Smart menus allow site administrators to create
 $string['smartmenusbycohort'] = 'By cohort';
 $string['smartmenusbycohort_help'] = 'Restrict the visibility based on the user\'s cohorts.';
 $string['smartmenusbydate'] = 'By date';
-$string['smartmenusbydate_help'] = 'Restrict the visibility based on the date';
 $string['smartmenusbydatefrom'] = 'From';
 $string['smartmenusbydatefrom_help'] = 'Restrict the visibility before the given date is reached';
 $string['smartmenusbydateuntil'] = 'Until';
@@ -1940,10 +1944,22 @@ $string['smartmenusmenuitemlistsortcourseidasc'] = 'Course ID ascending';
 $string['smartmenusmenuitemlistsortcourseiddesc'] = 'Course ID descending';
 $string['smartmenusmenuitemlistsortcourseidnumberasc'] = 'Course ID number ascending';
 $string['smartmenusmenuitemlistsortcourseidnumberdesc'] = 'Course ID number descending';
-$string['smartmenusmenuitemdisplayfield'] = 'Course name presentation';
-$string['smartmenusmenuitemdisplayfield_help'] = 'The course name which will be used as the title of the dynamic courses menu items. Choose between course full name and course short name';
+$string['smartmenusmenuitemdisplayfield'] = 'Course name presentation (1st line)';
+$string['smartmenusmenuitemdisplayfield_help'] = 'The course name which will be used as the title of the dynamic courses menu items. Choose between course full name, course short name, a custom course field or a combination of these. If you choose custom course field, you have to select the specific field to display as well.';
 $string['smartmenusmenuitemdisplayfieldcoursefullname'] = 'Course full name';
 $string['smartmenusmenuitemdisplayfieldcourseshortname'] = 'Course short name';
+$string['smartmenusmenuitemdisplayfieldcustomfield'] = 'Custom course field';
+$string['smartmenusmenuitemdisplayfieldfullnamecustomfield'] = 'Course full name (Custom course field)';
+$string['smartmenusmenuitemdisplayfieldfullnameshortname'] = 'Course full name (Course short name)';
+$string['smartmenusmenuitemdisplayfieldshortnamecustomfield'] = 'Course short name (Custom course field)';
+$string['smartmenusmenuitemdisplayfieldshortnamefullname'] = 'Course short name (Course full name)';
+$string['smartmenusmenuitemdisplayfieldsecond'] = 'Course name presentation (2nd line)';
+$string['smartmenusmenuitemdisplayfieldsecond_help'] = 'A second line which will be presented below the course name of a dynamic courses menu item. The second line is displayed in a smaller font size. Choose between course full name, course short name, or custom course field. If you choose custom course field, you have to select the specific field to display as well.';
+$string['smartmenusmenuitemdisplayfieldsecondnone'] = '-- No second line --';
+$string['smartmenusmenuitemdisplayfieldcustomfieldfirst'] = 'Custom course field (1st line)';
+$string['smartmenusmenuitemdisplayfieldcustomfieldfirst_help'] = 'Select the custom course field which should be displayed as part of the course name in the first line of the dynamic courses menu item.';
+$string['smartmenusmenuitemdisplayfieldcustomfieldsecond'] = 'Custom course field (2nd line)';
+$string['smartmenusmenuitemdisplayfieldcustomfieldsecond_help'] = 'Select the custom course field which should be displayed as part of the course name in the second line of the dynamic courses menu item.';
 $string['smartmenusmenuitemdisplayoptions'] = 'Title presentation';
 $string['smartmenusmenuitemdisplayoptions_help'] = 'Choose how you want the menu item title to be displayed.';
 $string['smartmenusmenuitemdisplayoptionshidetitle'] = 'Hide title text and show only icon (on all devices)';
@@ -1982,8 +1998,9 @@ $string['smartmenusmenuitemresponsivetablet'] = 'Tablet';
 $string['smartmenusmenuitemrestriction'] = 'Access rules';
 $string['smartmenusmenuitems'] = 'Menu items';
 $string['smartmenusmenuitemstructureheader'] = 'Menu item structure';
-$string['smartmenusmenuitemtextcount'] = 'Number of words';
-$string['smartmenusmenuitemtextcount_help'] = 'Specify the maximum number of words to be displayed as title in the dynamic courses menu items. If you leave this field empty, the title will be displayed in full length.';
+$string['smartmenusmenuitemtextcount'] = 'Number of words for course full name (1st line)';
+$string['smartmenusmenuitemtextcount_help'] = 'Specify the maximum number of words to be displayed from the course full name in the dynamic courses menu items. If you leave this field empty, the course full name will be displayed in full length.';
+$string['smartmenusmenuitemtextcountsecond'] = 'Number of words for course full name (2nd line)';
 $string['smartmenusmenuitemtextposition'] = 'Card text position';
 $string['smartmenusmenuitemtextposition_help'] = '<p>Select the position of the menu item text in relation to the card image, choosing from below image, top overlay and bottom overlay.</p><ul><li>Top overlay: Displays the menu item title over the overlay and at the top of the card.</li><li>Bottom overlay: Displays the menu item title over the overlay and at the bottom of the card.</li><li>Below image: Displays the menu item title below the card image.</li></ul>';
 $string['smartmenusmenuitemtextpositionbelowimage'] = 'Below image';
@@ -2066,6 +2083,7 @@ $string['recommendationcategory_boostunion'] = 'Boost Union';
 $string['recommendationcategory_thirdparty'] = 'Third-party plugins';
 $string['recommendationcategory_usability'] = 'Usability';
 $string['recommendationcategory_accessibility'] = 'Accessibility';
+$string['recommendationcategory_mwp'] = 'Moodle Workplace™';
 $string['recommendationstatus_ok'] = 'OK';
 $string['recommendationstatus_ok_description'] = 'With this recommendation, everything is perfectly fine. No action is required on your side.';
 $string['recommendationstatus_check'] = 'Check';
@@ -2115,6 +2133,11 @@ $string['recommendation_coreauthinstructions_description'] = 'Boost Union does n
 $string['recommendation_infobannerloginpagesidebyside_title'] = 'Info banner on login page';
 $string['recommendation_infobannerloginpagesidebyside_summary'] = 'Information banners on the login page with side-by-side login arrangement should be as concise as possible.';
 $string['recommendation_infobannerloginpagesidebyside_details'] = 'On the side-by-side login page arrangement, information banners are only shown in the right column over the login form. This means that the available width is reduced. Please keep the content of these information banners as short and concise as possible to avoid overloading of the login page.';
+
+// Recommendation: Boost Union MWP extension.
+$string['recommendation_mwpextension_title'] = 'Boost Union MWP extension';
+$string['recommendation_mwpextension_summary'] = 'The Boost Union MWP extension should be installed when running on Moodle Workplace™.';
+$string['recommendation_mwpextension_description'] = 'Boost Union has detected that this Moodle instance is running on Moodle Workplace™ as the tool_tenant plugin is installed. However, the Boost Union MWP extension is not installed. Without this extension, Boost Union but will lack essential Moodle Workplace™ widgets and won\'t have any support for tenants.<br /><br />But don\'t worry, there is the Boost Union MWP edition which provides full Moodle Workplace™ support and which is maintained by Boost Union co-maintainer bdecent. If you want to use Boost Union on Moodle Workplace™, you can find all details on the <a href="https://bdecent.de/union" target="_blank">bdecent product presentation page</a>.';
 
 // Privacy API.
 $string['privacy:metadata'] = 'The Boost Union theme does not store any personal data about any user.';

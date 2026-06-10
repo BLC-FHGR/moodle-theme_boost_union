@@ -4,7 +4,33 @@ moodle-theme_boost_union
 Changes
 -------
 
-### Unreleased
+### v5.2-r5
+
+* 2026-06-09 - MWP: Avoid the 'class theme_boost_union\local\mwp not found' exception when upgrading the plugin, resolves #1314
+* 2026-06-08 - Cleanup: Remove unused strings from the language pack, resolves #1311
+* 2026-06-08 - Internal change: Replace $notification->set_show_closebutton(false) with the third parameter of new \core\output\notification(), resolves #1310
+* 2026-06-08 - Improvement: Align the flavours, smart menus and snippets table with the recommendations table, resolves #1309
+* 2026-06-08 - Glitch: Flavours actions tooltips were wrong, resolves #1307
+
+### v5.2-r4
+
+* 2026-06-07 - Improvement: Allow the admin to customize the left-hand login instructions on the side-by-side login arrangement. If no authentication instructions are set, then the Moodle core fallback text in the left-hand login instructions is _not_ shown. Resolves #1298
+* 2026-06-07 - Improvement: Harden the login background image position setting on the side-by-side login arrangement
+* 2026-06-07 - Bugfix: On the side-by-side login arrangement, the uploaded background image showed on both sides, resolves #1299
+
+### v5.2-r3
+
+* 2026-06-06 - Bugfix: Adopt upstream changes in theme_boost layout files which were missed during the Boost Union 5.2 upgrade. This resulted in the fact that, for example, tertiary menu dropdowns were broken on mod/quiz/report page. Resolves #1295
+* 2026-06-06 - Tests: Fix PHPUnit Failure about missing SVGs for newly added FontAwesome mappings, resolves #1301
+* 2026-06-04 - Settings: Correct the 'Possible setting overrides' banners regarding the logo and the loginbackground settings
+* 2026-06-04 - MWP: Postprocess the default for the loginformposition setting, resolves #1302
+* 2026-06-03 - Improvement: Smart menus: Refine the "Number of words" option to only process the course full name, but neither the course short name nor the custom course fields.
+* 2026-06-03 - Improvement: Smart menus: Add more versatile course name presentation options to the dynamic courses, resolves #448
+* 2026-06-01 - Improvement: Improve the outer margins of the left-aligned and right-aligned login forms on smaller and of larger screens
+* 2026-06-01 - Improvement: Add a semi-left and semi-right option to the loginformposition setting, resolves #1296
+* 2026-05-31 - MWP: Add support for a Moodle Workplace™ extension for Boost Union, resolves #409
+
+### v5.2-r2
 
 * 2026-05-26 - Bugfix: Additional login background images may be not have been recognized directly after upload, resolved #1290
 * 2026-05-25 - Bugfix: Fix the default value of the courseoverviewshowcourseimages setting, resolves #1288
